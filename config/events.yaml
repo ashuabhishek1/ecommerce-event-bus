@@ -1,0 +1,28 @@
+events:
+  - name: AddressUpdated
+    fields:
+      - CustomerID
+    subscribers:
+      - NotificationService
+      - WebSocketGateway
+  - name: OrderPlaced
+    fields:
+      - OrderID
+      - CustomerID
+    subscribers:
+      - NotificationService
+      - WebSocketGateway
+  - name: ProductAddedToCart
+    fields:
+      - CartID
+      - ProductID
+    subscribers:
+      - NotificationService
+  - name: PaymentCompleted
+    fields:
+      - PaymentID
+      - OrderID
+      - CustomerID
+    subscribers:
+      - NotificationService
+      - WebSocketGateway
